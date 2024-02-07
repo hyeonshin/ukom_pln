@@ -85,10 +85,13 @@ if (!$auth->logged_admin()) {
 						<li class="breadcrumb-item active">User Data</li>
 					</ol>
 					<div class="row">
-						<div class="card mb-4">
+						<div class="card mb-4 p-0">
 							<div class="card-header">
 								<i class="fas fa-table me-1"></i>
 								Table User Data
+							</div>
+							<div class="d-flex justify-content-end m-3">
+								<a href="input.php" class="btn btn-primary"><i class="fa fa-plus"></i>&ensp;Add User</a>
 							</div>
 							<div class="card-body">
 								<table id="datatablesSimple">
@@ -114,6 +117,7 @@ if (!$auth->logged_admin()) {
 									</tfoot>
 									<tbody>
 										<?php while ($data = $view->fetch(PDO::FETCH_OBJ)) { ?>
+
 											<tr>
 												<td>
 													<?php echo $data->id_user; ?>
