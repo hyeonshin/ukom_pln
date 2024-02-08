@@ -15,117 +15,96 @@ $get_data = $auth->get_data_pembayaran();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tune-der</title>
-        <link type="text/css" href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link type="text/css" href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-        <link type="text/css" href="../css/theme.css" rel="stylesheet">
-        <link type="text/css" href="../images/icons/css/font-awesome.css" rel="stylesheet">
-        <link type="text/css" href='../http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
-            rel='stylesheet'>
-        <link rel="stylesheet" type="text/css" href="..//font-awesome/css/font-awesome.min.css">
-    </head>
-    <body>
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                        <i class="icon-reorder shaded"></i></a><a class="brand" href="../index.php"><center><img src="../resource/foto/logo_tuneder.png" class="navbar-brand" width="44%"> </center></a>
-                    <div class="nav-collapse collapse navbar-inverse-collapse">
-                        
-                    </div>
-                    <!-- /.nav-collapse -->
-                </div>
-            </div>
-            <!-- /navbar-inner -->
-        </div>
-        <!-- /navbar -->
-        <div class="wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="span3">
-                        <div class="sidebar">
-                            <ul class="widget widget-menu unstyled">
-                                <li class="active"><a href="index.php"><i class="menu-icon icon-dashboard"></i>Dashboard
-                                </a></li>
-                                <li><a href="pengaturan-biaya?id=<?= base64_encode(1); ?>"><i class="menu-icon fa fa-wrench"></i>Pengaturan Biaya</a>
-                                </li>
-                                <li><a href="cek"><i class="menu-icon fa fa-money"></i>Pembayaran</a>
-                                </li>
-                            </ul>
-                            <!--/.widget-nav-->
-                            
-                            
-                            <!--/.widget-nav-->
-                            <ul class="widget widget-menu unstyled">
-                                <li><a href="logout.php"><i class="menu-icon icon-signout"></i>Logout </a></li>
-                            </ul>
-                        </div>
-                        <!--/.sidebar-->
-                    </div>
-                    <!--/.span3-->
-                    <div class="span9">
-                        <div class="content">
-                            <div class="btn-controls">
-                                <div class="btn-box-row row-fluid">
-                                    <div class="btn-box big span8">
-                                        <img src="../resource/foto//logo_tuneder.png"><br>
-                                        <h3>Welcome back,<?= $get_data['nama_user']; ?>!</h3>
 
-                                    </div><div class="btn-box big span4"><i class="icon-user"></i><b><?= $get_data['nama_user']; ?></b>
-                                        <p class="text-muted">
-                                            <?= $get_data['level']; ?></p>
-                                    </div>
-                                </div>
-                                <div class="btn-box-row row-fluid">
-                                    <div class="span8">
-                                        <div class="row-fluid">
-                                            <div class="span6">
-                                                <div  class="btn-box small span12"><i class="fa fa-money"></i><b><?= $jumlah_pembayaran ?></b><b><small>Jumlah Data Pembayaran</small></b>
-                                                </div>
-                                            </div>
-                                            <div class="span6">
-                                                <div class="btn-box small span12"><i class="fa fa-wrench"></i><b>Rp.<?= $jumlah_biaya_admin ?>,00</b><b><small> Biaya Admin</small></b>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row-fluid">
-                                            
-                                        </div>
-                                        <div class="row-fluid">
-                                            
-                                        </div>
-                                    </div>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tune-der</title>
+    <link href="../css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="#">Tune-der</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i>
+        </button>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Core</div>
+                        <a class="nav-link" href="index.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Menu Management</div>
+                        <a class="nav-link" href="pengaturan-biaya?id=<?= base64_encode(1); ?>">
+                            <div class="sb-nav-link-icon"><i class="fas fa-wrench"></i></div>
+                            Pengaturan Biaya
+                        </a>
+                        <a class="nav-link" href="cek">
+                            <div class="sb-nav-link-icon"><i class="fas fa-dollar"></i></div>
+                            Pembayaran
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Logout Menu</div>
+                        <a class="nav-link" href="logout.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-sign-out"></i></div>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    <?= $get_data['nama_user']; ?>
+                    (
+                    <?= $get_data['level']; ?>)
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Dashboard</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <p class="mb-0">
+                                        Welcome back,
+                                        <code><?= $get_data['nama_user']; ?>!</code>
+                                        as
+                                        <code><?= $get_data['level']; ?>.</code>
+                                        Have a great day!
+                                    </p>
                                 </div>
                             </div>
-                            <!--/#btn-controls-->
-                            
                         </div>
-                        <!--/.content-->
                     </div>
-                    <!--/.span9-->
                 </div>
-            </div>
-            <!--/.container-->
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Tune-der 2018 - 2024</div>
+                    </div>
+                </div>
+            </footer>
         </div>
-        <!--/.wrapper-->
-        <div class="footer">
-            <div class="container">
-                <b class="copyright">Copyright &copy; 2018 Tune-der. </b>All rights reserved.
-            </div>
-        </div>
-        <script src="../scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
-        <script src="../scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-        <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="../scripts/flot/jquery.flot.js" type="text/javascript"></script>
-        <script src="../scripts/flot/jquery.flot.resize.js" type="text/javascript"></script>
-        <script src="../scripts/datatables/jquery.dataTables.js" type="text/javascript"></script>
-        <script src="../scripts/common.js" type="text/javascript"></script>
-      
-    </body>
-
-
-
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+        crossorigin="anonymous"></script>
+    <script src="../js/datatables-simple-demo.js"></script>
+</body>
