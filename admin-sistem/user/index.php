@@ -171,24 +171,4 @@ if (!$auth->logged_admin()) {
 	<script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
 		crossorigin="anonymous"></script>
 	<script src="../../js/datatables-simple-demo.js"></script>
-	<script>
-		// Set new default font family and font color to mimic Bootstrap's default styling
-		Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-		Chart.defaults.global.defaultFontColor = '#292b2c';
-
-		// Pie Chart Example
-		var ctx = document.getElementById("myPieChart");
-		var myPieChart = new Chart(ctx, {
-			type: 'pie',
-			data: {
-				labels: ["Petugas PLN", "Petugas Pembayaran"],
-				datasets: [{
-					data: [<?= $jumlah_petugas_pln ?>, <?= $jumlah_petugas_pembayaran ?>],
-					backgroundColor: ['#007bff', '#dc3545'],
-				}],
-			},
-		});
-
-
-	</script>
 </body>
