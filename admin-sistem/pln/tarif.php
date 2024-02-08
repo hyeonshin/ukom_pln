@@ -44,22 +44,22 @@ if (!$auth->logged_admin()) {
 							Dashboard
 						</a>
 						<div class="sb-sidenav-menu-heading">User Management</div>
-						<a class="nav-link" href="./index.php">
+						<a class="nav-link" href="../user/index.php">
 							<div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
 							User Data
 						</a>
-						<div class="sb-sidenav-menu-heading">Setting Menu</div>
+						<div class="sb-sidenav-menu-heading">Datas Management</div>
 						<a class="nav-link" href="../pln/tarif.php">
 							<div class="sb-nav-link-icon"><i class="fas fa-bolt"></i></div>
-							Setting Data Tarif
+							Data Tarif
 						</a>
 						<a class="nav-link" href="../pln/kota.php">
 							<div class="sb-nav-link-icon"><i class="fas fa-building"></i></div>
-							Setting Data Kota
+							Data Kota
 						</a>
 						<a class="nav-link" href="../pln/pelanggan.php">
 							<div class="sb-nav-link-icon"><i class="fas fa-user-group"></i></div>
-							Setting Kategori Pelanggan
+							Data Pelanggan
 						</a>
 						<div class="sb-sidenav-menu-heading">Logout Menu</div>
 						<a class="nav-link" href="../logout.php">
@@ -79,7 +79,7 @@ if (!$auth->logged_admin()) {
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid px-4">
-					<h1 class="mt-4">Setting Data Tarif</h1>
+					<h1 class="mt-4">Data Tarif</h1>
 					<ol class="breadcrumb mb-4">
 						<li class="breadcrumb-item"><a href="../index.php">Dashboard</a></li>
 						<li class="breadcrumb-item active">Data Tarif</li>
