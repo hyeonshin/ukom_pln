@@ -92,7 +92,7 @@ if (isset($_GET['id'])) {
 						<div class="card mb-4 p-0">
 							<div class="card-header">
 								<i class="fas fa-table me-1"></i>
-								Table Pelanggan
+								Table Penggunaan
 							</div>
 							<div class="d-flex justify-content-between m-3">
 								<a href="../tagihan-listrik?id=<?= base64_encode($data_pelanggan->id_pelanggan); ?>"
