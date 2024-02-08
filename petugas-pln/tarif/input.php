@@ -26,16 +26,14 @@ if (isset($_POST['kirim'])) {
 		window.location.href='.';
 		</script>
 		";
-	} 
-	elseif ($simpan == "TIDAK VALID") {
+	} elseif ($simpan == "TIDAK VALID") {
 		echo "
 		<script>
 		alert('Data yang dimasukkan tidak valid!');
 		window.location.href='.';
 		</script>
 		";
-	}
-	else {
+	} else {
 		echo "
 		<script>
 		alert('Data gagal di simpan!');
@@ -46,138 +44,150 @@ if (isset($_POST['kirim'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tune-der</title>
-	<link type="text/css" href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	<link type="text/css" href="../../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<link type="text/css" href="../../css/theme.css" rel="stylesheet">
-	<link type="text/css" href="../../images/icons/css/font-awesome.css" rel="stylesheet">
-	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
-	<link rel="stylesheet" type="text/css" href="../../font-awesome/css/font-awesome.min.css">
-
+	<link href="../../css/styles.css" rel="stylesheet" />
+	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
-<body>
 
-	<div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                        <i class="icon-reorder shaded"></i></a><a class="brand" href="../../index.php"><center><img src="../../resource/foto/logo_tuneder.png" class="navbar-brand" width="44%"> </center></a>
-                    <div class="nav-collapse collapse navbar-inverse-collapse">
-                        
-                    </div>
-                    <!-- /.nav-collapse -->
-                </div>
-            </div>
-            <!-- /navbar-inner -->
-        </div><!-- /navbar -->
-
-
-
-	<div class="wrapper">
-		<div class="container">
-			<div class="row">
-				<div class="span3">
-					<div class="sidebar">
-                           <ul class="widget widget-menu unstyled">
-                                <li class="active"><a href="../index.php"><i class="menu-icon icon-dashboard"></i>Dashboard
-                                </a></li>
-                                <li><a href="index.php"><i class="menu-icon fa fa-bolt"></i>Tarif</a>
-                                </li>
-                                <li><a href="../kota/index.php"><i class="menu-icon fa fa-building"></i>Kota</a>
-                                </li>
-                                <li><a href="../pelanggan/index.php"><i class="menu-icon icon-group"p></i>Pelanggan</a>
-                                </li>
-                            </ul>
-                            <!--/.widget-nav-->
-                            
-                            
-                            <!--/.widget-nav-->
-                            <ul class="widget widget-menu unstyled">
-                                <li><a href="../logout.php"><i class="menu-icon icon-signout"></i>Logout </a></li>
-                            </ul>
-                        </div><!--/.sidebar-->
-				</div><!--/.span3-->
-
-
-				<div class="span9">
-					<div class="content">
-
-						<div class="module">
-							<div class="module-head">
-								<h3>Input Data Tarif</h3>
-							</div>
-							<div class="module-body">
-
-
-									<form class="form-horizontal row-fluid" action="" method="post">
-										<input type="hidden" name="id_tarif" value="<?= $get_code; ?>">
-										<div class="control-group">
-											<label class="controls" for="basicinput">Daya</label>
-											<div class="controls">
-												<input type="number" name="daya" id="daya" class="span8" required="" placeholder="Example : 450">
-												<span class="right-text" id="format_volt">VA</span>
-											</div>
-
+<body class="sb-nav-fixed">
+	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+		<!-- Navbar Brand-->
+		<a class="navbar-brand ps-3" href="#">Tune-der</a>
+		<!-- Sidebar Toggle-->
+		<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+				class="fas fa-bars"></i>
+		</button>
+	</nav>
+	<div id="layoutSidenav">
+		<div id="layoutSidenav_nav">
+			<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+				<div class="sb-sidenav-menu">
+					<div class="nav">
+						<div class="sb-sidenav-menu-heading">Core</div>
+						<a class="nav-link" href="../index.php">
+							<div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+							Dashboard
+						</a>
+						<div class="sb-sidenav-menu-heading">Menu Management</div>
+						<a class="nav-link" href="../tarif/index.php">
+							<div class="sb-nav-link-icon"><i class="fas fa-bolt"></i></div>
+							Tarif
+						</a>
+						<a class="nav-link" href="../kota/index.php">
+							<div class="sb-nav-link-icon"><i class="fas fa-building"></i></div>
+							Kota
+						</a>
+						<a class="nav-link" href="../pelanggan/index.php">
+							<div class="sb-nav-link-icon"><i class="fas fa-user-group"></i></div>
+							Pelanggan
+						</a>
+						<div class="sb-sidenav-menu-heading">Logout Menu</div>
+						<a class="nav-link" href="../logout.php">
+							<div class="sb-nav-link-icon"><i class="fas fa-sign-out"></i></div>
+							Logout
+						</a>
+					</div>
+				</div>
+				<div class="sb-sidenav-footer">
+					<div class="small">Logged in as:</div>
+					<?= $get_data['nama_user']; ?>
+					(
+					<?= $get_data['level']; ?>)
+				</div>
+			</nav>
+		</div>
+		<div id="layoutSidenav_content">
+			<main>
+				<div class="container-fluid px-4">
+					<h1 class="mt-4">Add Tarif Data Form</h1>
+					<ol class="breadcrumb mb-4">
+						<li class="breadcrumb-item"><a href="../index.php">Dashboard</a></li>
+						<li class="breadcrumb-item"><a href="./index.php">Tarif</a></li>
+						<li class="breadcrumb-item active">Add Tarif Data</li>
+					</ol>
+					<div class="row">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-lg-7">
+									<div class="card shadow-lg border-0 rounded-lg mt-5">
+										<div class="card-header">
+											<h3 class="text-center font-weight-light my-4">Add Tarif Data</h3>
 										</div>
-
-										<div class="control-group">
-											<label class="controls" for="basicinput">Tarif per kwh</label>
-											<div class="controls ">
-												<span class="left-text" id="format_rupiah_tarif">Rp. </span>
-												<input type="number" name="tarif_per_kwh" id="tarif_per_kwh" class="span8" required="" placeholder="Example : 2500">
-												<span class="right-text" id="format_rupiah_tarif">,00</span>
-											</div>
+										<div class="card-body">
+											<form class="form-horizontal row-fluid" action="" method="post">
+												<input type="hidden" name="id_tarif" value="<?= $get_code; ?>">
+												<div class="row mb-3">
+													<div class="row g-2">
+														<div class="col-md">
+															<div class="form-floating">
+																<input type="number" name="daya" id="daya"
+																	class="form-control" required="">
+																<label for="floatingInputGrid">Daya (VA)</label>
+															</div>
+														</div>
+														<div class="col-md">
+															<div class="form-floating">
+																<input type="number" name="tarif_per_kwh"
+																	id="tarif_per_kwh" class="form-control" required="">
+																<label for="floatingInputGrid">Tarif per kwh
+																	(Rp)</label>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row mb-3">
+													<div class="row g-2">
+														<div class="col-md">
+															<div class="form-floating">
+																<input type="number" name="ppn" id="ppn"
+																	class="form-control" required="">
+																<label for="floatingInputGrid">PPN (%)</label>
+															</div>
+														</div>
+														<div class="col-md">
+															<div class="form-floating">
+																<input type="number" name="denda" id="denda"
+																	class="form-control" required="">
+																<label for="floatingInputGrid">Denda (Rp/Bulan)</label>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="mt-4 mb-0">
+													<div class="d-grid"><button type="submit" name="kirim"
+															class="btn btn-primary btn-block">
+															<i class="fa fa-plus icon-form"></i>&ensp;Add data
+														</button>
+													</div>
+												</div>
+											</form>
 										</div>
-										
-										<div class="control-group">
-											<label class="controls" for="basicinput">PPN</label>
-											<div class="controls">
-												<input type="number" name="ppn" id="ppn" class="span8" required="" placeholder="Example : 2">
-												<span class="right grey-text" id="format_persen">%</span>
-											</div>
-										</div>
-
-										<div class="control-group">
-											<label class="controls" for="basicinput">Denda</label>
-											<div class="controls">
-												<span class="left-text" id="format_rupiah_denda">Rp. </span>
-												<input type="number" name="denda" id="denda" class="span8" required="" placeholder="Example : 2000">
-												<span class="right grey-text" id="format_rupiah_denda">,00/Bulan</span>
-											</div>
-										</div>
-
-										<div class="control-group">
-											<div class="controls">
-												<button type="submit" name="kirim" class="btn btn-info">
-												<i class="fa fa-plus icon-form"></i>&ensp;Add Data
-												</button>
-											</div>
-										</div>
-									</form>
+									</div>
+								</div>
 							</div>
 						</div>
-
-						
-						
-					</div><!--/.content-->
-				</div><!--/.span9-->
-			</div>
-		</div><!--/.container-->
-	</div><!--/.wrapper-->
-
-	<div class="footer">
-		<div class="container">
-			 
-
-			<b class="copyright">Copyright &copy; 2018 Tune-der. </b> All rights reserved.
+					</div>
+				</div>
+			</main>
+			<footer class="py-4 bg-light mt-auto">
+				<div class="container-fluid px-4">
+					<div class="d-flex align-items-center justify-content-between small">
+						<div class="text-muted">Copyright &copy; Tune-der 2018 - 2024</div>
+					</div>
+				</div>
+			</footer>
 		</div>
 	</div>
-
-	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
-	<script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+		crossorigin="anonymous"></script>
+	<script src="../../js/scripts.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+		crossorigin="anonymous"></script>
+	<script src="../../js/datatables-simple-demo.js"></script>
 </body>
+
