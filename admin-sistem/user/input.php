@@ -52,6 +52,7 @@ if (isset($_POST['kirim'])) {
 
 	<link href="../../css/styles.css" rel="stylesheet" />
 	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
 
 <body class="sb-nav-fixed">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -108,7 +109,7 @@ if (isset($_POST['kirim'])) {
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid px-4">
-					<h1 class="mt-4">Dashboard</h1>
+					<h1 class="mt-4">Input User Data Form</h1>
 					<ol class="breadcrumb mb-4">
 						<li class="breadcrumb-item"><a href="../index.php">Dashboard</a></li>
 						<li class="breadcrumb-item"><a href="./index.php">User Data</a></li>

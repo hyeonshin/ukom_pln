@@ -79,7 +79,7 @@ if (!$auth->logged_admin()) {
 		<div id="layoutSidenav_content">
 			<main>
 				<div class="container-fluid px-4">
-					<h1 class="mt-4">Dashboard</h1>
+					<h1 class="mt-4">User Data Menu</h1>
 					<ol class="breadcrumb mb-4">
 						<li class="breadcrumb-item"><a href="../index.php">Dashboard</a></li>
 						<li class="breadcrumb-item active">User Data</li>
